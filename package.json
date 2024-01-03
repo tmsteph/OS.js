@@ -4,6 +4,9 @@
   "description": "OS.js",
   "main": "index.js",
   "scripts": {
+    "build": "NODE_ENV=production npm run build",
+    "start": "npm run build && npm run package:discover -- --copy && node src/server/index.js",
+    "vercel": "npm run build && vercel --prod",
     "test": "npm run eslint && npm run stylelint",
     "eslint": "eslint 'src/client/**/*.js' 'src/server/**/*.js'",
     "stylelint": "stylelint 'src/client/*.scss'",
@@ -17,7 +20,7 @@
     "make:application": "osjs-cli make:application",
     "make:iframe-application": "osjs-cli make:iframe-application",
     "make:provider": "osjs-cli make:provider",
-    "build": "webpack",
+    
     "watch": "webpack --watch"
   },
   "keywords": [
