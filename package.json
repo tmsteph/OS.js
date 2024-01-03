@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "NODE_ENV=production npm run build",
-    "start": "node vercel-build.js",
+    "start": "npm run build && npm run package:discover -- --copy && node src/server/index.js",
     "vercel": "npm run build && vercel --prod",
     "test": "npm run eslint && npm run stylelint",
     "eslint": "eslint 'src/client/**/*.js' 'src/server/**/*.js'",
